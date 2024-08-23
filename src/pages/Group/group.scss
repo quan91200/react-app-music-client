@@ -1,0 +1,7 @@
+@import '../../index.scss';
+
+.wrapperGroup {
+    @include themify($themes) {
+        background-color: aqua;
+    }
+}

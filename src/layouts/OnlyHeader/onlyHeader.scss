@@ -1,0 +1,13 @@
+@import '../../index.scss';
+
+.onlyHeader {
+    @include themify($themes) {
+        min-height: 100vh;
+        background-color: themed("bgSoft");
+
+        .wrapperOL {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+    }
+}

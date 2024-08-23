@@ -1,0 +1,126 @@
+@import '../../index.scss';
+
+// Left
+.wrapperLeft {
+    @include themify($themes) {
+        flex: 1.5 1;
+        position: sticky;
+        top: 70px;
+        height: calc(100vh - 70px);
+        overflow-y: scroll;
+        background-color: themed("bgSoft");
+
+        @include mobile {
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .containerLeft {
+            padding: 15px 25px;
+
+            hr {
+                margin: 20px 0px;
+                border: none;
+                height: 0.5px;
+                background-color: themed("border");
+            }
+
+            .menuLeft {
+                display: flex;
+                flex-direction: column;
+
+                .shortcutsLeft {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .titleLeft {
+                        color: gray;
+                        font-weight: 600;
+                        width: 100%;
+                        cursor: pointer;
+                        padding: 5px 0px;
+
+                        &:hover {
+                            opacity: 0.75;
+                        }
+                    }
+
+                    button {
+                        cursor: pointer;
+                        margin: 0;
+                        padding: 5px 8px;
+                        outline: none;
+                        border: none;
+                        background: none;
+
+                        &:hover {
+                            background-color: themed("bg");
+                        }
+                    }
+                }
+
+                a {
+                    color: themed("textColor");
+                    text-decoration: none;
+                    font-weight: 600;
+                    padding: 10px;
+
+                    &:hover {
+                        background-color: themed("bg");
+                        border-radius: 8px;
+                    }
+
+                    :where(.userLeft, .itemLeft) {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .userLeft {
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .itemLeft {
+                        svg {
+                            color: themed("logo");
+                        }
+                    }
+                }
+
+                .moreLeft {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    padding: 10px;
+                    font-weight: 600;
+                    color: themed("textColor");
+
+                    &:hover {
+                        background-color: themed("bg");
+                        border-radius: 8px;
+                    }
+
+                    svg {
+                        padding: 3px;
+                        background-color: themed("bgIcon");
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+export { default as Home } from './Home/Home'
+export { default as Profile } from './Profile/Profile'
+export { default as Login } from './Login/Login'
+export { default as Chat } from './Chat/Chat'
+export { default as Video } from './Video/Video'
+export { default as Music } from './Music/Music'
+export { default as Group } from './Group/Group'
+export { default as Dashboard } from './Dashboard/Dashboard'

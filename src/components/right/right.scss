@@ -1,0 +1,99 @@
+@import '../../index.scss';
+
+.wrapperRight {
+    @include themify($themes) {
+        flex: 1.5 1;
+        position: sticky;
+        top: 70px;
+        height: calc(100vh - 70px);
+        overflow-y: scroll;
+        background-color: themed("bgSoft");
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include tablet {
+            flex: 2 1;
+        }
+
+        .containerRight {
+            padding: 15px 0px;
+
+            .itemRight {
+                padding: 20px;
+                margin-bottom: 20px;
+
+                .titleRight {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    span {
+                        color: gray;
+                        font-weight: 600;
+                    }
+
+                    .iconRight {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        color: themed("textColor");
+
+                        svg {
+                            cursor: pointer;
+
+                            &:hover {
+                                opacity: 0.75;
+                            }
+                        }
+                    }
+
+                }
+
+                .user {
+                    display: grid;
+                    grid-template-rows: auto;
+                    row-gap: 5px;
+                    padding: 10px 10px;
+                    background-color: themed("bgSoft");
+                    border-radius: 8px;
+                    margin: 10px 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: themed("bg");
+                    }
+
+                    .userInfo {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        position: relative;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        .online {
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background-color: limegreen;
+                            top: 0;
+                            left: 30px;
+                        }
+
+                        span {
+                            color: themed("textColor");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,236 @@
+@import "../../index.scss";
+
+// Header
+.wrapperHeader {
+    @include themify($themes) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 6px 20px;
+        box-shadow: 0 4px 6px #a8a4a4;
+        position: sticky;
+        top: 0;
+        background-color: themed("bg");
+        color: themed("textColor");
+        z-index: 999;
+
+        .leftHeader {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .title {
+                font-weight: bold;
+                font-size: 20px;
+                color: themed("logo");
+                text-decoration: none;
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                background-color: rgba(233, 219, 219, 0.38);
+                padding: 5px;
+
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    color: themed("textColor");
+
+                    @include mobile {
+                        display: none;
+                    }
+
+                    @include tablet {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .middleHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 10px;
+
+            @include mobile {
+                .middleHeader {
+                    display: none;
+                }
+            }
+
+            @include tablet {
+                .middleHeader {
+                    display: none;
+                }
+            }
+
+            .link {
+                padding: 10px 40px;
+                cursor: pointer;
+                color: themed("textColor");
+
+                &:hover {
+                    background-color: themed("bgSoft");
+                    border-radius: 8px;
+                }
+            }
+
+            .active {
+                border-bottom: 2px solid themed("logo");
+                color: themed("logo");
+            }
+        }
+
+        .rightHeader {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+
+            :where(.mode, .badge, .user) {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: themed("bgIcon");
+                border-radius: 50%;
+                padding: 5px;
+            }
+
+            .notifications {
+                position: absolute;
+                top: 60px;
+                right: 2px;
+                z-index: 20;
+                padding: 10px 20px;
+                margin-right: 60px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+                -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                -moz-box-shadow: 0px 0px 25px -5px rgba(0, 0, 0, 0.38);
+                box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                border-radius: 8px;
+                background-color: themed("bg");
+                color: themed("textColor");
+            }
+
+            .MuiBadge-badge {
+                color: themed("bgSoft");
+                background-color: themed("logo");
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                padding: 0 !important;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .information {
+                position: absolute;
+                width: 250px;
+                top: 60px;
+                right: 2px;
+                z-index: 20;
+                padding: 10px 15px;
+                margin-right: 15px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                box-shadow: 0px 0px 25px -5px rgba(0, 0, 0, 0.38);
+                border-radius: 8px;
+                background-color: themed("bg");
+                color: themed("textColor");
+
+                .title {
+                    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+                    border-radius: 8px;
+                    background-color: themed("bg");
+                    color: themed("textColor");
+
+                    .userName {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 10px;
+                        margin: 5px 10px;
+                        height: 60px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        h3 {
+                            margin: 0;
+                            display: inline-flex;
+                        }
+                    }
+
+                    hr {
+                        margin: 5px 8px;
+                        object-fit: contain;
+                    }
+
+                    a {
+                        line-height: 2;
+                        margin: 10px;
+                        text-decoration: underline;
+                        font-weight: bold;
+                        color: themed("textColor");
+                    }
+                }
+
+                .content {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr;
+
+                    a {
+                        padding: 6px 10px;
+                        font-weight: bold;
+                        font-size: 16px;
+                        text-decoration: none;
+                        color: themed("textColor");
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 10px;
+                        border-radius: 8px;
+
+                        &:hover {
+                            background-color: themed("bgSoft");
+                        }
+
+                        .icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 5px;
+                            background-color: themed("bgIcon");
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
